@@ -1,12 +1,31 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
+.tours{
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content;
+    gap: 20px;
+}
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.tour{
+    display: flex;
+    gap:15px;
+    box-shadow: 0px 0px 10px #e8e4e4;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow 1s ease;
+    height: 200px;
+    overflow: hidden;
+
+}
+
+.tour:hover{
+    box-shadow: 0px 0px 10px #beb7de;
+
+}
+
+.tour-img{
+    min-width: 40%;
+    border: 2px solid green;
+
 }
