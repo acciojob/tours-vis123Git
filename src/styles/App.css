@@ -29,3 +29,14 @@
     border: 2px solid green;
 
 }
+
+.show-hide{
+    text-decoration: none;
+    color: purple;
+}
+
+
+.show-hide:hover{
+    text-decoration: none;
+    color: rgb(237, 63, 10);
+}

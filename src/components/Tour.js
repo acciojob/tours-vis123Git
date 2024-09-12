@@ -9,7 +9,7 @@ function Tour({ item }) {
       <div className="tour-info">
         <h3>{item.name}</h3>
         <p>{item.price}</p>
-        <p>{item.info.length > 200 ? `${item.info.substring(0,200)}...show more` : item.info }</p>
+        <p>{item.info.length > 200 ? <p>{`${item.info.substring(0,200)}... `} <span className="show-hide">show more</span></p> : item.info }</p>
       </div>
     </div>
   );
