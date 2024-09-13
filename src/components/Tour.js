@@ -28,7 +28,7 @@ function Tour({ item }) {
             id={`delete-btn-${item.id}`}
             onClick={() => setFullInfo(!fullInfo)}
           >
-            {fullInfo ? "show less" : "show more"}
+            {fullInfo ? <span id={`see-less-${item.id}`}>show less</span> : <span id={`see-more-${item.id}`}>show more</span>}
           </button>
         </p>
       </div>
