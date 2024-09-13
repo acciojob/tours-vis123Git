@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Tour({ item }) {
+        
+  const [info, setInfo] = useState("");
+  const [fullInfo, setFullInfo] = useState(false);
+
+  useEffect(() => {
+    if (!fullInfo) {
+      setInfo(item.info.substring(0, 200));
+    } else {
+      setInfo(item.info);
+    }
+  }, [fullInfo, item.info]);
+
   return (
     <div className="tour">
       <div className="tour-img">
@@ -10,16 +22,14 @@ function Tour({ item }) {
         <h3>{item.name}</h3>
         <p>{item.price}</p>
         <p id={`tour-item-para-${item.id}`}>
-          {item.info.length > 200 ? (
-            <p>
-              {`${item.info.substring(0, 200)}...`}
-              <button className="show-hide" id={`delete-btn-${item.id}`}>
-                show more
-              </button>
-            </p>
-          ) : (
-            item.info
-          )}
+          {info}
+          <button
+            className="show-hide"
+            id={`delete-btn-${item.id}`}
+            onClick={() => setFullInfo(!fullInfo)}
+          >
+            {fullInfo ? "show less" : "show more"}
+          </button>
         </p>
       </div>
     </div>
