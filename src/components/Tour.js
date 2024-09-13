@@ -27,15 +27,13 @@ function Tour({ item, onRemove }) {
         </div>
         <p id={`tour-item-para-${item.id}`}>
           {info}
-          {fullInfo ? (
-            <button className="show-hide" id={`see-less-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
-              See less
-            </button>
-          ) : (
-            <button className="show-hide" id={`see-more-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
-              See more
-            </button>
-          )}
+          <button className="show-hide" id={`see-less-${item.id}`} onClick={() => setFullInfo(false)}>
+            See less
+          </button>
+          {"  "}
+          <button className="show-hide" id={`see-more-${item.id}`} onClick={() => setFullInfo(true)}>
+            See more
+          </button>
         </p>
       </div>
     </div>
