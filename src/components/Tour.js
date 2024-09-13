@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Tour({ item }) {
+function Tour({ item, onRemove }) {
   const [info, setInfo] = useState("");
   const [fullInfo, setFullInfo] = useState(false);
 
@@ -19,11 +19,16 @@ function Tour({ item }) {
       </div>
       <div className="tour-info">
         <h3>{item.name}</h3>
+        <div className="remove-btn">
+          <button className="remove-tour" id={`remove-btn-${item.id}`} onClick={() => onRemove(item.id)}>
+            Remove
+          </button>
         <p>{item.price}</p>
+        </div>
         <p id={`tour-item-para-${item.id}`}>
           {info}
-          <button className="show-hide" id={`delete-btn-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
-            {fullInfo ? <button id={`see-less-${item.id}`}>See less</button> : <button id={`see-more-${item.id}`}>See more</button>}
+          <button className="show-hide" id={`toggle-info-btn-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
+            {fullInfo ? "See less" : "See more"}
           </button>
         </p>
       </div>
