@@ -22,15 +22,9 @@ function Tour({ item }) {
         <p>{item.price}</p>
         <p id={`tour-item-para-${item.id}`}>
           {info}
-          {fullInfo ? (
-            <button id={`see-less-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
-              See less
-            </button>
-          ) : (
-            <button id={`see-more-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
-              See more
-            </button>
-          )}
+          <button className="show-hide" id={`delete-btn-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
+            {fullInfo ? <button id={`see-less-${item.id}`}>See less</button> : <button id={`see-more-${item.id}`}>See more</button>}
+          </button>
         </p>
       </div>
     </div>
