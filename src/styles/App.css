@@ -33,10 +33,15 @@
 .show-hide{
     text-decoration: none;
     color: purple;
+    border: none;
+    background-color: transparent;
+    padding: 0;
 }
 
 
 .show-hide:hover{
     text-decoration: none;
     color: rgb(237, 63, 10);
+    cursor: pointer;
+    border-radius: 5px;
 }

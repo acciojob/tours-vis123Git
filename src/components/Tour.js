@@ -9,7 +9,18 @@ function Tour({ item }) {
       <div className="tour-info">
         <h3>{item.name}</h3>
         <p>{item.price}</p>
-        <p>{item.info.length > 200 ? <p>{`${item.info.substring(0,200)}... `} <span className="show-hide">show more</span></p> : item.info }</p>
+        <p id={`tour-item-para-${item.id}`}>
+          {item.info.length > 200 ? (
+            <p>
+              {`${item.info.substring(0, 200)}...`}
+              <button className="show-hide" id={`delete-btn-${item.id}`}>
+                show more
+              </button>
+            </p>
+          ) : (
+            item.info
+          )}
+        </p>
       </div>
     </div>
   );
