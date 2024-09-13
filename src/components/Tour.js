@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 function Tour({ item }) {
-        
   const [info, setInfo] = useState("");
   const [fullInfo, setFullInfo] = useState(false);
 
@@ -23,12 +22,8 @@ function Tour({ item }) {
         <p>{item.price}</p>
         <p id={`tour-item-para-${item.id}`}>
           {info}
-          <button
-            className="show-hide"
-            id={`delete-btn-${item.id}`}
-            onClick={() => setFullInfo(!fullInfo)}
-          >
-            {fullInfo ? <span id={`see-less-${item.id}`}>show less</span> : <span id={`see-more-${item.id}`}>show more</span>}
+          <button className="show-hide" id={`delete-btn-${item.id}`} onClick={() => setFullInfo(!fullInfo)}>
+            {fullInfo ? <button id={`see-less-${item.id}`}>See less</button> : <button id={`see-more-${item.id}`}>Show more</button>}
           </button>
         </p>
       </div>
