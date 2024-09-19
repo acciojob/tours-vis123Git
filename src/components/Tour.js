@@ -31,9 +31,7 @@ function Tour({ item, onRemove }) {
             See less
           </button>
           {"  "}
-          <button className="show-hide" id={`see-more-${item.id}`} onClick={() => setFullInfo(true)}>
-            See more
-          </button>
+          <button className="show-hide" id={`see-more-${item.id}`} onClick={() => setFullInfo(true)}>Show less</button>
         </p>
       </div>
     </div>
